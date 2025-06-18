@@ -1,0 +1,27 @@
+@import "./reset";
+@import "./variables/global";
+
+.app {
+  font: var(--font-m);
+  height: 100vh;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - var(--navbar-height));
+  flex-grow: 1;
+}
+
+.page-wrapper {
+  display: flex;
+  height: 100%;
+
+  flex-direction: column;
+}

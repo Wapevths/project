@@ -1,0 +1,141 @@
+.container_photo_page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 5vh 12vw;
+  position: relative;
+  gap: 4vh;
+  .background_image_photo {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-size: cover;
+    filter: blur(8px);
+    background-position: center;
+    background-image: url("../../../assets/backgroundImagePhoto.jpg");
+  }
+  .blackout_background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .selected_image {
+    z-index: 1;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .container_header {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+    justify-content: space-between;
+    .sub_container_author {
+      display: flex;
+      gap: 1vh;
+      align-items: center;
+      .author_image {
+        border-radius: 8px;
+        border: 1px solid white;
+        width: 6.5vh;
+        height: 6.5vh;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .container_author_name {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        .name {
+          font: var(--font-xl)
+        }
+        .twitter_name {
+          font: var(--font-l)
+        }
+      }
+    }
+    .sub_container_button {
+      display: flex;
+      gap: 2vh;
+      .favorite_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        height: 4.9vh;
+        padding: 1vh;
+        width: 4.9vh;
+        .image {
+          width: 100%;
+          height: 100%;
+          filter: invert(1);
+        }
+        .active_image {
+          filter: invert(0);
+        }
+      }
+      .download_button {
+        display: flex;
+        background: #FFF200;
+        align-items: center;
+        border-radius: 8px;
+        padding: 1vh 2.3vh;
+        gap: 1.6vh;
+        width: 19vh;
+        cursor: pointer;
+        height: 4.9vh;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        p {
+          font: var(--font-mll);
+        }
+      }
+      .active {
+        background: #FFF200;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .container_photo_page {
+    padding: 4.5vh 6vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .container_photo_page {
+    padding: 4vh 2vh;
+  }
+  .container_photo_page {
+    .container_header {
+      .sub_container_button {
+        .download_button {
+          height: 4.9vh;
+          justify-self: center;
+          padding: 1vh;
+          width: 4.9vh;
+          p {
+            display: none;
+          }
+
+        }
+      }
+    }
+  }
+}
